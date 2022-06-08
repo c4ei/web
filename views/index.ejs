@@ -1,0 +1,1345 @@
+<%- include('./partials/head'); %>
+<input type="hidden" id="krw" value="<%=krw%>" />
+<div id="main" class="layout-column flex bg-dark">
+    <div id="content" class="flex">
+        <div>
+            <!-- <h4 class="form-control no-border no-shadow no-bg typeahead newsInfo"> 
+                
+            </h4> -->
+            <div class="page-hero page-container" id="page-hero" style="margin: unset; margin-left: 5px; max-width: none">
+                <div style="padding: 0.15rem !important;" class="padding d-flex">
+                    <div class="page-title">
+                        <h2 class="text-md text-highlight">WEB.C4EI.NET</h2>
+                        <small class="text-muted">비트코인 트렌드 및 정보를 제공합니다. [<%=(krw).toLocaleString('ko-KR');%> KRW/USD] </small>
+                        <!-- <span class="d-none d-sm-inline mx-1 rates">  </span> -->
+                    </div>
+                    <div class="flex"></div>
+                    <div id="subMenu">
+                        <a href="https://www.mexc.com/ko-KR/register?inviteCode=mexc-c4ei" target="_blank" title="mexc">
+                            <img src="/img/mexc728x90.png" alt="mexc" style="height:90px;width:728px;" id="topBanner"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content page-container" id="page-content" style="
+                                                      margin: unset;
+                                                      margin-left: 5px;
+                                                      max-width: none;
+                                                      display: flex;
+                                                    ">
+                <div id="mainMenu" class="padding" style="
+                                                    padding: 0.3rem;
+                                                    padding-top: 0.5rem;
+                                                    flex: 0 0 66.6666666%;
+                                                    ">
+                    <div class="row row-sm sr">
+                        <div class="col-12">
+                            <div class="
+                                            alert
+                                            gd-primary
+                                            alert-dismissible
+                                            fade
+                                            show
+                                            p-4
+                                            mb-4
+                                        " style="
+                                            background: #fffefa
+                                            linear-gradient(45deg, #e91e63, #ffeb3b);
+                                            padding: 0.85rem !important;
+                                            margin-bottom: 15px !important;
+                                        " role="alert">
+                                <div class="d-sm-flex">
+                                    <div class="avatar-group">
+                                        <a href="https://www.binance.me/en/activity/referral-entry?fromActivityPage=true&ref=LIMIT_MYXXT2O8" target="__blank" class="avatar ajax w-40" style="margin-left: 10px" data-toggle="tooltip" title="" data-pjax-state="" data-original-title="바이낸스">
+                                            <img src="/img/bn.png" alt="."/>
+                                        </a>
+                                        <a href="https://www.mexc.com/ko-KR/register?inviteCode=mexc-c4ei" target="__blank" class="avatar ajax w-40" style="margin-left: 10px" data-toggle="tooltip" title="" data-pjax-state="" data-original-title="mexc">
+                                            <img src="/img/mexc80.png" alt="mexc"/>
+                                        </a>
+
+                                    </div>
+                                    <div class="d-sm-flex align-items-center mt-4 mt-sm-0">
+                                        <div class="mx-sm-3">
+                                            <h6 class="text-white mb-0">
+                                                마진(선물) 거래소 가입 링크
+                                            </h6>
+                                            <small class="text-white">역대급 수수료 할인 최대
+                                                <small style="color: #fed482">50%</small>
+                                                !</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row row-sm">
+                                <div id="g1" class="col-3 d-flex">
+                                    <div class="card flex" data-sr-id="2" style="
+                                                                                        visibility: visible;
+                                                                                        transform: none;
+                                                                                        opacity: 1;
+                                                                                        transition: none 0s ease 0s;
+                                                                                    ">
+                                        <div class="card-body">
+                                            <small data-toggle="tooltip" title="" data-original-title="비트코인 공포/탐욕 지수">공포 / 탐욕 지수 :
+                                                <strong id="dt_f1" class="text-primary fearAndGreedRate" style="color: #ffeb3b !important">
+                                                    <%=mainInfo.f1%>
+                                                </strong>
+                                            </small>
+                                            <div class="progress my-3 circle fearAndGreedCircle" style="height: 6px">
+                                                <div class="
+                                                                                                                                        progress-bar
+                                                                                                                                        circle
+                                                                                                                                        gd-primary
+                                                                                                                                        fearAndGreedST
+                                                                                                                                      " data-toggle="tooltip" title="" style="
+                                                                                                                                        width: 18.319999999999993%;
+                                                                                                                                        background: #ffeb3b !important;
+                                                                                                                                      " data-original-title="공포 / 탐욕 지수 비율"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="g2" class="col-3 d-flex">
+                                    <div class="card flex" data-sr-id="3" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <small data-toggle="tooltip" title="" data-original-title="비트코인 상대 강도 지수 (RSI)">강도 지수 (RSI) :
+                                                <strong id="dt_f2" class="text-primary RSIRate" style="color: #fafafa !important">
+                                                    <%=mainInfo.f2%></strong>
+                                            </small>
+                                            <div class="progress my-3 circle RSICircle" style="height: 6px">
+                                                <div class="progress-bar circle gd-primary RSIST" data-toggle="tooltip" title="" style="width: 50%; background: #fafafa !important" data-original-title="상대 강도 지수 비율"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="g3" class="col-3 d-flex">
+                                    <div class="card flex" data-sr-id="4" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <small data-toggle="tooltip" title="" data-original-title="스토캐스틱 (RSI)">스토캐스틱 :
+                                                <strong id="dt_f3" class="text-primary SRSIRate" style="color: #00b0ff !important">
+                                                    <%=mainInfo.f3%></strong>
+                                            </small>
+                                            <div class="progress my-3 circle SRSICircle" style="height: 6px">
+                                                <div class="progress-bar circle gd-primary SRSIST" data-toggle="tooltip" title="" style="
+                                                                                                                                        width: 86.52%;
+                                                                                                                                        background: #00b0ff !important;
+                                                                                                                                      " data-original-title="스토캐스틱 지수 비율"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="g4" class="col-3 d-flex">
+                                    <div class="card flex" data-sr-id="5" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <small data-toggle="tooltip" title="" data-original-title="비트코인 이평선 트렌드">트렌드 :
+                                                <strong id="dt_f4" class="text-primary EMARate" style="color: #fafafa !important">
+                                                    <%=mainInfo.f4%></strong>
+                                            </small>
+                                            <div class="progress my-3 circle EMACircle" style="height: 6px">
+                                                <div class="progress-bar circle gd-primary EMAST" data-toggle="tooltip" title="" style="
+                                                                                                                                        width: 100%;
+                                                                                                                                        background: #fafafa !important;
+                                                                                                                                      " data-original-title="트렌드"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-md-12 col-lg-8">
+                            <!-- <div class="row row-sm">
+                                                            <div id="c1" class="col-3 d-flex">
+                                                                <div class="card flex" data-sr-id="6" style="
+                                                                                                  visibility: visible;
+                                                                                                  transform: none;
+                                                                                                  opacity: 1;
+                                                                                                  transition: none 0s ease 0s;
+                                                                                                ">
+                                                                    <div class="card-body">
+                                                                        <h4 style="font-size: 1.2125rem">
+                                                                            <img style="width: 22px; margin-top: -2px" src="/img/btc.png"/>
+                                                                            BTC-USDT
+                                                                        </h4>
+                                                                        <h3 id="btcusdtPrice" style="color: rgb(255, 125, 115)">
+                                                                            ▼ 30088.0
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="c2" class="col-3 d-flex">
+                                                                <div class="card flex" data-sr-id="7" style="
+                                                                                                  visibility: visible;
+                                                                                                  transform: none;
+                                                                                                  opacity: 1;
+                                                                                                  transition: none 0s ease 0s;
+                                                                                                ">
+                                                                    <div class="card-body">
+                                                                        <h4 style="font-size: 1.2125rem">
+                                                                            <img style="width: 22px; margin-top: -2px" src="/img/eth.png"/>
+                                                                            ETH-USDT
+                                                                        </h4>
+                                                                        <h3 id="ethusdtPrice" style="color: rgb(255, 125, 115)">
+                                                                            ▼ 1832.3
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="c3" class="col-3 d-flex">
+                                                                <div class="card flex" data-sr-id="8" style="
+                                                                                                  visibility: visible;
+                                                                                                  transform: none;
+                                                                                                  opacity: 1;
+                                                                                                  transition: none 0s ease 0s;
+                                                                                                ">
+                                                                    <div class="card-body">
+                                                                        <h4 style="font-size: 1.2125rem">
+                                                                            <img style="width: 22px; margin-top: -2px" src="/img/xrp.png"/>
+                                                                            XRP-USDT
+                                                                        </h4>
+                                                                        <h3 id="xrpusdtPrice" style="color: rgb(255, 125, 115)">
+                                                                            ▼ 0.3980
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                            
+                                                            <div id="c4" class="col-3 d-flex">
+                                                                <div class="card flex" data-sr-id="9" style="
+                                                                                                  visibility: visible;
+                                                                                                  transform: none;
+                                                                                                  opacity: 1;
+                                                                                                  transition: none 0s ease 0s;
+                                                                                                ">
+                                                                    <div class="card-body">
+                                                                        <h4 style="font-size: 1.2125rem">
+                                                                            <img style="width: 22px; margin-top: -2px" src="/img/sol.png"/>
+                                                                            SOL-USDT
+                                                                        </h4>
+                                                                        <h3 id="solusdtPrice" style="color: rgb(255, 125, 115)">
+                                                                            ▼ 40.70
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                            <div class="row row-sm">
+                                <div class="col-md-4 d-flex">
+                                    <div class="card flex" data-sr-id="10" style="
+                                                                                visibility: visible;
+                                                                                transform: none;
+                                                                                opacity: 1;
+                                                                                transition: none 0s ease 0s;
+                                                                            ">
+                                        <div class="card-body text-center">
+                                            <small class="text-highlight" data-toggle="tooltip" title="" data-original-title="BTC 도미넌스">비트코인 시장 점유율</small>
+                                            <div class="pt-3">
+                                                <div style="height: 120px" class="pos-rlt">
+                                                    <div class="chartjs-size-monitor" style="
+                                                                                            position: absolute;
+                                                                                            inset: 0px;
+                                                                                            overflow: hidden;
+                                                                                            pointer-events: none;
+                                                                                            visibility: hidden;
+                                                                                            z-index: -1;
+                                                                                        ">
+                                                        <div class="chartjs-size-monitor-expand" style="
+                                                                                                        position: absolute;
+                                                                                                        left: 0;
+                                                                                                        top: 0;
+                                                                                                        right: 0;
+                                                                                                        bottom: 0;
+                                                                                                        overflow: hidden;
+                                                                                                        pointer-events: none;
+                                                                                                        visibility: hidden;
+                                                                                                        z-index: -1;
+                                                                                                        ">
+                                                            <div style="
+                                                                        position: absolute;
+                                                                        width: 1000000px;
+                                                                        height: 1000000px;
+                                                                        left: 0;
+                                                                        top: 0;
+                                                                    "></div>
+                                                        </div>
+                                                        <div class="chartjs-size-monitor-shrink" style="
+                                                                                                position: absolute;
+                                                                                                left: 0;
+                                                                                                top: 0;
+                                                                                                right: 0;
+                                                                                                bottom: 0;
+                                                                                                overflow: hidden;
+                                                                                                pointer-events: none;
+                                                                                                visibility: hidden;
+                                                                                                z-index: -1;
+                                                                                                ">
+                                                            <div style="
+                                                                            position: absolute;
+                                                                            width: 200%;
+                                                                            height: 200%;
+                                                                            left: 0;
+                                                                            top: 0;
+                                                                        "></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="
+                                                                    pos-abt
+                                                                    w-100
+                                                                    h-100
+                                                                    d-flex
+                                                                    align-items-center
+                                                                    justify-content-center
+                                                                ">
+                                                        <div>
+                                                            <div class="text-highlight text-md">
+                                                                <span id="dt_f5"><%=mainInfo.f5%></span>
+                                                                <!-- id="btcDominance" -->
+                                                            </div>
+                                                            <small class="text-muted">%</small>
+                                                        </div>
+                                                    </div>
+                                                    <canvas id="chart-pie-1" width="227" height="120" style="
+                                                                display: block;
+                                                                width: 227px;
+                                                                height: 120px;
+                                                            " class="chartjs-render-monitor"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row row-sm">
+                                        <div class="col-12">
+                                            <div class="card" data-sr-id="11" style="
+                                                                                    visibility: visible;
+                                                                                    transform: none;
+                                                                                    opacity: 1;
+                                                                                    transition: none 0s ease 0s;
+                                                                                ">
+                                                <div class="card-body">
+                                                    <div class="row row-sm">
+                                                        <div class="col-4" style="text-align: center">
+                                                            <small class="text-highlight" data-toggle="tooltip" title="" data-original-title="바이비트/업비트 프리미엄">비트코인 김프</small>
+                                                            <div class="mt-2 font-weight-500">
+                                                                <span id="dt_f6" class="text-up btcKimp"><%=mainInfo.f6%></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="text-align: center">
+                                                            <small class="text-highlight" data-toggle="tooltip" title="" data-original-title="바이비트/업비트 프리미엄">이더리움 김프</small>
+                                                            <div class="mt-2 font-weight-500">
+                                                                <span id="dt_f7" class="text-up ethKimp"><%=mainInfo.f7%></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="text-align: center">
+                                                            <small class="text-highlight" data-toggle="tooltip" title="" data-original-title="바이비트/업비트 프리미엄">리플 김프</small>
+                                                            <div class="mt-2 font-weight-500">
+                                                                <span id="dt_f8" class="text-up xrpKimp"><%=mainInfo.f8%></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-sm">
+                                        <div class="col-6 d-flex">
+                                            <div class="card flex" data-sr-id="12" style="
+                                                                                                                                      visibility: visible;
+                                                                                                                                      transform: none;
+                                                                                                                                      opacity: 1;
+                                                                                                                                      transition: none 0s ease 0s;
+                                                                                                                                    ">
+                                                <div class="card-body">
+                                                    <small data-toggle="tooltip" title="" data-original-title="비트코인 롱 비율">LONG (공매수) 비율 :
+                                                        <strong id="dt_f9" class="text-primary longRate"><%=mainInfo.f9%></strong>
+                                                    </small>
+                                                    <div class="progress my-3 circle" style="height: 6px">
+                                                        <div class="
+                                                                                                                                                            progress-bar
+                                                                                                                                                            circle
+                                                                                                                                                            gd-primary
+                                                                                                                                                            longRateST
+                                                                                                                                                          " data-toggle="tooltip" title="" style="width: 53.6%" data-original-title="비트코인 롱 비율"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <div class="card flex" data-sr-id="13" style="
+                                                                                                                                      visibility: visible;
+                                                                                                                                      transform: none;
+                                                                                                                                      opacity: 1;
+                                                                                                                                      transition: none 0s ease 0s;
+                                                                                                                                    ">
+                                                <div class="card-body">
+                                                    <small data-toggle="tooltip" title="" data-original-title="비트코인 숏 비율">SHORT (공매도) 비율 :
+                                                        <strong id="dt_f10" class="text-primary shortRate"><%=mainInfo.f10%></strong>
+                                                    </small>
+                                                    <div class="progress my-3 circle" style="height: 6px">
+                                                        <div class="
+                                                                                                                                                            progress-bar
+                                                                                                                                                            circle
+                                                                                                                                                            gd-warning
+                                                                                                                                                            shortRateST
+                                                                                                                                                          " data-toggle="tooltip" title="" style="width: 46.4%" data-original-title="비트코인 숏 비율"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card" data-sr-id="14" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <div class="d-md-flex">
+                                                <div class="flex">
+                                                    <div class="text-highlight btcFundText" style="font-size: 0.825rem" data-toggle="tooltip" title="" data-original-title="바이비트 BTCUSDT 기준">
+                                                        비트코인 펀딩 비율
+                                                    </div>
+                                                    <!-- <small class="fundingTimeLeft">04 : 14 : 31</small> -->
+                                                </div>
+                                                <div>
+                                                    <small id="dt_f11" class="btcusdtFunding text-dn"><%=mainInfo.f11%></small>
+                                                </div>
+                                            </div>
+                                            <div class="w-70" style="height: 30px">
+                                                <div class="chartjs-size-monitor" style="
+                                                                                                                                                position: absolute;
+                                                                                                                                                inset: 0px;
+                                                                                                                                                overflow: hidden;
+                                                                                                                                                pointer-events: none;
+                                                                                                                                                visibility: hidden;
+                                                                                                                                                z-index: -1;
+                                                                                                                                              ">
+                                                    <div class="chartjs-size-monitor-expand" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 1000000px;
+                                                                                                                                                            height: 1000000px;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 200%;
+                                                                                                                                                            height: 200%;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                </div>
+                                                <canvas id="chart-line-1" width="227" height="30" style="display: block; width: 227px; height: 30px" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card" data-sr-id="15" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <div class="d-md-flex">
+                                                <div class="flex">
+                                                    <div class="text-highlight ethFundText" style="font-size: 0.825rem" data-toggle="tooltip" title="" data-original-title="바이비트 ETHUSDT 기준">
+                                                        이더리움 펀딩 비율
+                                                    </div>
+                                                    <!-- <small class="fundingTimeLeft">04 : 14 : 31</small> -->
+                                                </div>
+                                                <div>
+                                                    <small id="dt_f12" class="ethusdtFunding text-up"><%=mainInfo.f12%></small>
+                                                </div>
+                                            </div>
+                                            <div class="w-70" style="height: 30px">
+                                                <div class="chartjs-size-monitor" style="
+                                                                                                                                                position: absolute;
+                                                                                                                                                inset: 0px;
+                                                                                                                                                overflow: hidden;
+                                                                                                                                                pointer-events: none;
+                                                                                                                                                visibility: hidden;
+                                                                                                                                                z-index: -1;
+                                                                                                                                              ">
+                                                    <div class="chartjs-size-monitor-expand" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 1000000px;
+                                                                                                                                                            height: 1000000px;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 200%;
+                                                                                                                                                            height: 200%;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                </div>
+                                                <canvas id="chart-line-2" width="227" height="30" style="display: block; width: 227px; height: 30px" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card" data-sr-id="16" style="
+                                                                                                                  visibility: visible;
+                                                                                                                  transform: none;
+                                                                                                                  opacity: 1;
+                                                                                                                  transition: none 0s ease 0s;
+                                                                                                                ">
+                                        <div class="card-body">
+                                            <div class="d-md-flex">
+                                                <div class="flex">
+                                                    <div class="text-highlight xrpFundText" style="font-size: 0.825rem" data-toggle="tooltip" title="" data-original-title="바이비트 XRPUSDT 기준">
+                                                        리플 펀딩 비율
+                                                    </div>
+                                                    <!-- <small class="fundingTimeLeft">04 : 14 : 31</small> -->
+                                                </div>
+                                                <div>
+                                                    <small id="dt_f13" class="xrpusdtFunding text-up"><%=mainInfo.f13%></small>
+                                                </div>
+                                            </div>
+                                            <div class="w-70" style="height: 30px">
+                                                <div class="chartjs-size-monitor" style="
+                                                                                                                                                position: absolute;
+                                                                                                                                                inset: 0px;
+                                                                                                                                                overflow: hidden;
+                                                                                                                                                pointer-events: none;
+                                                                                                                                                visibility: hidden;
+                                                                                                                                                z-index: -1;
+                                                                                                                                              ">
+                                                    <div class="chartjs-size-monitor-expand" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 1000000px;
+                                                                                                                                                            height: 1000000px;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink" style="
+                                                                                                                                                          position: absolute;
+                                                                                                                                                          left: 0;
+                                                                                                                                                          top: 0;
+                                                                                                                                                          right: 0;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                          overflow: hidden;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                          visibility: hidden;
+                                                                                                                                                          z-index: -1;
+                                                                                                                                                        ">
+                                                        <div style="
+                                                                                                                                                            position: absolute;
+                                                                                                                                                            width: 200%;
+                                                                                                                                                            height: 200%;
+                                                                                                                                                            left: 0;
+                                                                                                                                                            top: 0;
+                                                                                                                                                          "></div>
+                                                    </div>
+                                                </div>
+                                                <canvas id="chart-line-3" width="227" height="30" style="display: block; width: 227px; height: 30px" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--- 포지션 --->
+                                <div class="col-md-4 d-flex">
+                                    <div class="card flex" data-sr-id="20" style="
+                                                                                                            visibility: visible;
+                                                                                                            transform: none;
+                                                                                                            opacity: 1;
+                                                                                                            transition: none 0s ease 0s;
+                                                                                                            ">
+                                        <div style="padding: 0.65rem" class="card-body" data-toggle="tooltip" title="" data-original-title="비트맥스 상위 수익 랭커">
+                                            <div class="d-flex align-items-center text-hover-success">
+                                                <div id="dt_f14_3">
+                                                <%  if(mainInfo.f14_2=="Long"){ %>
+                                                <div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>
+                                                <% }else{ %>
+                                                <div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>
+                                                <% } %>
+                                                </div>
+                                                <div class="px-4 flex" style="padding-left: 0.85rem !important;padding-right: 0.85rem !important;">
+                                                    <div class="text-highlight">aoa 포지션</div>
+                                                    <div id="dt_f14_1" style="font-size: 12px" class="text-info mt-2 type1update">
+                                                        <%=mainInfo.f14_1%>
+                                                    </div>
+                                                </div>
+                                                <a class="text-muted" style="margin-right: 5px">
+                                                    <span id="dt_f14_2" style="color: rgb(244, 67, 54)" class="type1po"><%=mainInfo.f14_2%></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card flex" data-sr-id="21" style="
+                                                                                                            visibility: visible;
+                                                                                                            transform: none;
+                                                                                                            opacity: 1;
+                                                                                                            transition: none 0s ease 0s;
+                                                                                                            ">
+                                        <div style="padding: 0.65rem" class="card-body" data-toggle="tooltip" title="" data-original-title="상위 수익랭커">
+                                            <div class="d-flex align-items-center text-hover-danger">
+                                                <div id="dt_f15_3">
+                                                <%  if(mainInfo.f15_2=="Long"){ %>
+                                                    <div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>
+                                                    <% }else{ %>
+                                                    <div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>
+                                                    <% } 
+                                                %>
+                                                </div>
+                                                <div class="px-4 flex" style="padding-left: 0.85rem !important;padding-right: 0.85rem !important;">
+                                                    <div class="text-highlight">3dudes 포지션</div>
+                                                    <div id="dt_f15_1" style="font-size: 12px" class="text-info mt-2 type2update">
+                                                        <%=mainInfo.f15_1%>
+                                                    </div>
+                                                </div>
+                                                <a class="text-muted" style="margin-right: 5px">
+                                                    <span id="dt_f15_2" style="color: rgb(244, 67, 54)" class="type2po"><%=mainInfo.f15_2%></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card flex" data-sr-id="22" style="
+                                                                                                            visibility: visible;
+                                                                                                            transform: none;
+                                                                                                            opacity: 1;
+                                                                                                            transition: none 0s ease 0s;
+                                                                                                            ">
+                                        <div style="padding: 0.65rem" class="card-body" data-toggle="tooltip" title="" data-original-title="비트맥스 단기간 수익률이 매우 높은편.">
+                                            <div class="d-flex align-items-center text-hover-success">
+                                                <div id="dt_f16_3">
+                                                <%  if(mainInfo.f16_2=="Long"){ %>
+                                                    <div  style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>
+                                                    <% }else{ %>
+                                                    <div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>
+                                                    <% } 
+                                                %>
+                                                </div>
+                                                <div class="px-4 flex" style="padding-left: 0.85rem !important;padding-right: 0.85rem !important;">
+                                                    <div class="text-highlight">BogPear 포지션</div>
+                                                    <div id="dt_f16_1" style="font-size: 12px" class="text-info mt-2 type3update">
+                                                        <%=mainInfo.f16_1%>
+                                                    </div>
+                                                </div>
+                                                <a class="text-muted" style="margin-right: 5px">
+                                                    <span id="dt_f16_2" style="color: rgb(244, 67, 54)" class="type3po"><%=mainInfo.f16_2%></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--- 포지션 --->
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 d-flex">
+<!-- ############################################################################### -->
+<!-- <iframe src="https://talk.c4ei.net" frameborder="0" width="100%" height="400"></iframe> -->
+    <table width="100%" height="400" border="0">
+        <tr>
+            <td style="height: 380px;width: 100%;vertical-align: top;">
+                <div style="height: 380px;width: 100%;vertical-align: top;overflow-y: scroll;">
+                <table style="height: 380px;width: 100%;vertical-align: top;">
+                    <tbody id="tbl_chatMsg" style="padding:0.1rem;height: 380px;">
+                        <tr><td>welcome</td></tr>
+                        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+                    </tbody>
+                </table>
+                </div>
+            </td>
+        </tr>
+        <form id="form" action="">
+        <tr>
+            <td>
+                <input id="input" autocomplete="off" style="width: 340px;" />
+                <button>Send</button>
+            </td>
+        </tr>
+        </form>
+    </table>
+
+                      <script src="/socket.io/socket.io.js"></script>
+                        <script>
+                          var socket = io();
+                        //   var messages = document.getElementById('messages');
+                          var form = document.getElementById('form');
+                          var input = document.getElementById('input');
+                        
+                          form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            if (input.value) {
+                              socket.emit('chat message', input.value);
+                              input.value = '';
+                            }
+                          });
+                        
+                          socket.on('chat message', function(msg) {
+                            // var item = document.createElement('li');
+                            // item.textContent = msg;
+                            // messages.appendChild(item);
+                            let _tr = '<tr><td>'+msg+'</td></tr>';
+                            // console.log(_tr);
+                            $("#tbl_chatMsg").prepend(_tr);
+                            // window.scrollTo(0, document.body.scrollHeight);
+                          });
+                        </script>
+<!-- ############################################################################### -->
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <div class="card flex" data-sr-id="18" style="
+                                                visibility: visible;
+                                                transform: none;
+                                                opacity: 1;
+                                                transition: none 0s ease 0s;
+                                            ">
+                                <div class="card card-body" style="
+                                                            padding-top: 10px;
+                                                            padding-bottom: 10px;
+                                                            margin-bottom: 0px;
+                                                            visibility: visible;
+                                                            transform: none;
+                                                            opacity: 1;
+                                                            transition: none 0s ease 0s;
+                                                            " data-sr-id="19">
+                                    <center>
+                                        <p>
+                                            <a style="color:white;" href="<%=mainNews.n1_2%>" target="_blank"><%=mainNews.n1_1%></a> | 출처 : coindesk
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card realWDCard mCustomScrollbar _mCS_2 mCS-autoHide" style="
+                                                    max-height: 560px;
+                                                    visibility: visible;
+                                                    transform: none;
+                                                    opacity: 1;
+                                                    transition: none 0s ease 0s;
+                                                " data-sr-id="23">
+                                <div id="mCSB_2" class="
+                                                    mCustomScrollBox
+                                                    mCS-minimal-dark
+                                                    mCSB_vertical mCSB_outside
+                                                    " tabindex="0" style="max-height: 560px">
+                                    <div id="mCSB_2_container" class="mCSB_container" style="position: relative; top: 0; left: 0" dir="ltr">
+                                        <!-- <div class="p-3-4"> -->
+                                            <div class="d-flex">
+                                                <div style="margin-left: 10px; margin-top: 12px">
+                                                    <div class="text-highlight">
+실시간 고래 입출금
+                                                    </div>
+                                                    <small class="text-muted realWDLastUpdate">Last Update : 2022-06-02　21 : 21 : 10</small>
+                                                </div>
+                                                <span class="flex">
+                                                    <div class="avatar w-48 m-2 no-shadow gd-red" style="float: right;margin-top: 5px !important;margin-right: 20px !important;">
+                                                        <a style="border-radius: 50%" href="https://t.me/whale_dream" target="__blank"><img src="/img/telegram.png" class="mCS_img_loaded"/></a>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        <!-- </div> -->
+                                        <div style="height:200px;overflow-y: scroll;vertical-align: top; ">
+                                        <table class="table table-theme v-middle m-0" >
+                                            <input type="hidden" id="tbl_tele1_max" value="0" /> 
+                                            <tbody class="realWD" id="tbl_tele1" style="padding:0.25rem !important;">
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div id="mCSB_2_scrollbar_vertical" class="
+                                                                        mCSB_scrollTools mCSB_2_scrollbar
+                                                                        mCS-minimal-dark
+                                                                        mCSB_scrollTools_vertical
+                                                                        " style="display: block">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_2_dragger_vertical" class="mCSB_dragger" style="
+                                                                                position: absolute;
+                                                                                min-height: 50px;
+                                                                                height: 208px;
+                                                                                top: 0px;
+                                                                                display: block;
+                                                                                max-height: 526px;
+                                                                                " oncontextmenu="return false;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 50px"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" card realBSCard mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar " style="max-height: 560px; visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s; " data-sr-id="24">
+                                <div id="mCSB_3" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside " tabindex="0" style="max-height: 560px">
+                                    <div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position: relative; top: 0; left: 0" dir="ltr">
+                                        <div class="p-3-4">
+                                            <!-- <div class="d-flex" style="margin-bottom: 20px">
+                                                <div style="margin-left: 10px; margin-top: 12px">
+                                                    <div class="text-highlight">
+                                                        실시간 고래 청산 내역
+                                                    </div>
+                                                    <small class="text-muted realBSLastUpdate">Last Update : 2022-06-02　20 : 22 : 54</small>
+                                                </div>
+                                                <span class="flex">
+                                                    <div class="avatar w-48 m-2 no-shadow gd-red" style="
+                                                                                                                                                          float: right;
+                                                                                                                                                          margin-top: 5px !important;
+                                                                                                                                                          margin-right: 20px !important;
+                                                                                                                                                        ">
+                                                        <a style="border-radius: 50%" href="https://t.me/whaleliq" target="__blank"><img src="/img/telegram.png" class="mCS_img_loaded"/></a>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="list list-row realLiquidations">
+                                                <div style="
+                                                                                                                                        background-color: #448bff;
+                                                                                                                                        background-blend-mode: soft-light;
+                                                                                                                                      " class="list-item hmmm">
+                                                    <div>
+                                                        <span class="badge badge-circle text-highlight"></span>
+                                                    </div>
+                                                    <div class="flex">
+                                                        <a class="item-title text-highlight h-1x">바이낸스 선물</a>
+                                                    </div>
+                                                    <div>
+                                                        <span class="
+                                                                                                                                                            item-amount
+                                                                                                                                                            d-sm-block
+                                                                                                                                                            text-sm text-highlight
+                                                                                                                                                          ">$30206</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="
+                                                                                                                                                            item-amount
+                                                                                                                                                            d-sm-block
+                                                                                                                                                            text-sm text-highlight
+                                                                                                                                                          ">3천</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="
+                                                                                                                                                            item-amount
+                                                                                                                                                            d-sm-block
+                                                                                                                                                            text-sm text-highlight
+                                                                                                                                                          ">숏 청산</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="
+                                                                                                                                                            item-amount
+                                                                                                                                                            d-sm-block
+                                                                                                                                                            text-sm text-highlight
+                                                                                                                                                          ">20 : 28</span>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="mCSB_3_scrollbar_vertical" class="
+                                                                    mCSB_scrollTools mCSB_3_scrollbar
+                                                                    mCS-minimal-dark
+                                                                    mCSB_scrollTools_vertical
+                                                                    " style="display: none">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="
+                                                                    position: absolute;
+                                                                    min-height: 50px;
+                                                                    height: 0px;
+                                                                    top: 0px;
+                                                                    " oncontextmenu="return false;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 50px"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <div class="" style="width:100%;margin-top:5px;">
+                        <select id="select2-single" class="form-control " >
+                            <optgroup label="가상화폐 관련">
+                                <option selected="" value="B1">비트코인(BTCUSDT 바이낸스) 차트</option>
+                                <option value="B0">비트코인(BTCKRW 업비트) 차트</option>
+                                <option value="B2">비트코인(BITFINEX) 롱 물량 차트</option>
+                                <option value="B3">비트코인(BITFINEX) 숏 물량 차트</option>
+                                <option value="B4">비트코인 도미넌스 (시장점유율) 차트</option>
+                                <option value="B5">이더리움(ETHUSDT 바이낸스) 차트</option>
+                                <option value="B6">솔라나(SOLUSDT 바이낸스) 차트</option>
+                                <option value="B7">리플(XRPUSDT 바이낸스) 차트</option>
+                            </optgroup>
+                            <optgroup label="주식 관련">
+                                <option value="C1">주식 - 나스닥(NXDUSD) 차트</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <iframe id="tradingview_627c9" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=BINANCE:BTCUSDT&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=BINANCE:BTCUSDT" style="width: 100%;height: 100%;margin: 0 !important;padding: 0 !important;border-radius: 5px;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/tata.js"></script>
+<script src="/js/tuna.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- <script src="/js/socket.io.js"></script> -->
+<script>
+    function getData() {
+        $.ajax({
+            url: "/api/mainInfo",
+            type: "get",
+            datatype: "json",
+            success: function (data) { // 데이터를 확인하고 싶을 때.
+                let str = JSON.parse(data);
+                // <> stringify()
+                // alert(str);
+                $.each(str, function (index, item) {
+                    // 데이터 =item
+                    // $("#demo").append(index + " "); // index가 끝날때까지
+                    $("#dt_f1").text(item.f1);
+                    $("#dt_f2").text(item.f2);
+                    $("#dt_f3").text(item.f3);
+                    $("#dt_f4").text(item.f4);
+                    $("#dt_f5").text(item.f5);
+                    $("#dt_f6").text(item.f6);
+                    $("#dt_f7").text(item.f7);
+                    $("#dt_f8").text(item.f8);
+                    $("#dt_f9").text(item.f9);
+                    $("#dt_f10").text(item.f10);
+                    $("#dt_f11").text(item.f11);
+                    $("#dt_f12").text(item.f12);
+                    $("#dt_f13").text(item.f13);
+                    $("#dt_f14_1").text(item.f14_1);
+                    $("#dt_f14_2").text(item.f14_2);
+                    $("#dt_f15_1").text(item.f15_1);
+                    $("#dt_f15_2").text(item.f15_2);
+                    $("#dt_f16_1").text(item.f16_1);
+                    $("#dt_f16_2").text(item.f16_2);
+                    if(item.f14_2=="Long"){
+                        $("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+                    }else{
+                        $("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+                    }
+                    if(item.f15_2=="Long"){
+                        $("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+                    }else{
+                        $("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+                    }
+                    if(item.f16_2=="Long"){
+                        $("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+                    }else{
+                        $("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+                    }
+                });
+            },
+            error: function () { // alert('error');
+            }
+        });
+    }
+
+    function getData2() {
+        let _tbl_tele1_max = $("#tbl_tele1_max").val();
+        $.ajax({
+            url: "/api/whaleTrInfo",
+            type: "get",
+            datatype: "json",
+            success: function (data) 
+            {
+                let str = JSON.parse(data);
+                if(str.id!=undefined){
+                    if(str.from_owner_type=='unknown'){str.from_owner_type="특정지갑";}
+                    if(str.to_owner_type=='unknown'){str.to_owner_type="특정지갑";}
+                    let _tr = '';
+                    _tr = _tr+'<tr><td style="display:none;">'+str.id+'</td>';
+                    _tr = _tr+'<td style="display:none;">'+str.blockchain+'</td>';
+                    _tr = _tr+'<td class="flex">'+str.from_owner_type+' ▷ '+str.to_owner_type+' '+(str.amount_usd).toLocaleString('ko-KR')+' USDT '+jsfn_numb2Krw(str.amount_usd)+' KRW ';
+                    _tr = _tr+'<div class=" item-mail text-muted h-1x d-none d-sm-block "> '+str.regdate+' </div></td>';
+                    // _tr = _tr+'<td class="flex"><div class=" item-mail text-muted h-1x d-none d-sm-block"> </div></td></tr>';
+                    if(_tbl_tele1_max!=str.id){
+                        $("#tbl_tele1").prepend(_tr);
+                        $("#tbl_tele1_max").val(str.id);
+                    }
+                }
+            },
+            error: function () { // alert('error');
+            }
+        });
+    }
+    getData2();
+    const interval = setInterval(() => { getData();  }, 1000 * 60); //console.log('====== 1MIN 마다 실행 ======');
+    const interval2 = setInterval(() => { getData2(); }, 1000 * 15); //console.log('====== 15 sec 마다 실행 ======');
+
+    function jsfn_numb2Krw(number) {
+        let _krw = $("#krw").val();
+        var inputNumber = number < 0 ? false : number;
+        inputNumber = inputNumber*_krw;  // krw
+        var unitWords = ["", "만", "억", "조", "경"];
+        var splitUnit = 10000;
+        var splitCount = unitWords.length;
+        var resultArray = [];
+        var resultString = "";
+
+        for (var i = 0; i < splitCount; i++) {
+            var unitResult =
+            (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+            unitResult = Math.floor(unitResult);
+            if (unitResult > 0) {
+            resultArray[i] = unitResult;
+            }
+        }
+        for (var i = 0; i < resultArray.length; i++) {
+            if (!resultArray[i]) continue;
+            resultString = String(resultArray[i]) + unitWords[i] + resultString;
+        }
+        return resultString;
+    }
+</script>
+<script>
+// const socket = io('https://web.c4ei.net')
+// socket.on('chatMessage', function(msg){
+//     console.log("msg:"+msg +" / "+convertNow(new Date().getTime()));
+// });
+    // const socket = io('https://talk.c4ei.net');
+    // socket.on('chat-message', data => {
+    //     console.log(`${data.name}: ${data.message}`);
+    // });
+
+    // socket.on('chatMessage', function(msg){
+    //     //$('#message-container').append($('<li>').text(msg));
+    //         console.log(msg+":msg");
+    // });
+</script>
+<script>
+    // const socket = io.connect("https://web.c4ei.net/api/", {
+    //     rejectUnauthroized: true,
+    //     transport: ["websocket"]
+    // });
+
+    // socket.on("w2", function (msg) {
+    //     var row = "";
+    //     if (! msg) {
+    //         return;
+    //     }
+    //     msg.forEach(function (index, i) {
+    //         if (index.d.isWD == "입금") {
+    //             var imgURL = "d";
+    //         } else {
+    //             var imgURL = "w";
+    //         } row += "<tr>";
+    //         if (isMobile() === false) {
+    //             row += "<td></td>";
+    //         }
+    //         row += '<td><div class="avatar-group"><a class="avatar ajax w-36"><img src="../assets/img/white/' + imgURL + '.png"></a></div></td>';
+    //         row += '<td class="flex"><a class="item-company ajax h-1x text-highlight">' + index.d.fromText + "에서 " + index.d.toText + "로 " + index.d.isWD + '</a><div class="item-mail text-muted h-1x d-none d-sm-block">' + convertNow(index.d.t) + "</div></td>";
+    //         // row += '<td><span class="item-amount d-none d-sm-block text-highlight">'+index.d.ca+' = '+index.d.nc+' '+index.d.isWD+'</span></td>';
+    //         row += '<td class="flex"><a class="item-company ajax h-1x text-highlight">' + index.d.nc + " " + index.d.isWD + '</a><div class="item-mail text-muted h-1x d-none d-sm-block">' + index.d.ca + "</div></td>";
+    //         row += "</tr>";
+    //     });
+    //     if (firstLoadWhale == 1) {
+    //         if (msg[0].d.isWD == "입금") {
+    //             tata.log("[실시간 고래 " + msg[0].d.isWD + "]", msg[0].d.fromText + "에서 " + msg[0].d.toText + "로<br>" + msg[0].d.nc + " " + msg[0].d.isWD, {
+    //                 duration: 5000,
+    //                 position: "bl"
+    //             });
+    //         } else {
+    //             tata.log("[실시간 고래 " + msg[0].d.isWD + "]", msg[0].d.fromText + "에서 " + msg[0].d.toText + "로<br>" + msg[0].d.nc + " " + msg[0].d.isWD, {
+    //                 duration: 5000,
+    //                 position: "bl"
+    //             });
+    //         }
+    //     }
+    //     $(".realWD").html(row);
+    //     if ($(".realWD > tr").length > 0) {
+    //         $(".realWDLastUpdate").html("Last Update : " + $(".realWD > tr > td.flex > div")[0].textContent);
+    //     } else {
+    //         $(".realWDLastUpdate").html("Last Update : " + convertNow(new Date().getTime()));
+    //         $(".realBSLastUpdate").html("Last Update : " + convertNow(new Date().getTime()));
+    //     }
+    //     if (firstLoadWhale == 0) {
+    //         firstLoadWhale = 1;
+    //     }
+    // });
+    // socket.on("s2", function (msg) {
+    //     $(".realBS").html(row);
+    //     if ($(".realBS > tr").length > 0) {
+    //         $(".realBSLastUpdate").html("Last Update : " + $(".realBS > tr > td.flex > div")[0].textContent);
+    //     } else {
+    //         $(".realBSLastUpdate").html("Last Update : " + convertNow(new Date().getTime()));
+    //     }
+    // });
+</script>
+<script>
+    function convertNow(x) {
+        var date = new Date(x);
+        var aaaa = date.getFullYear();
+        var gg = date.getDate();
+        var mm = date.getMonth() + 1;
+        if (gg < 10) 
+            gg = "0" + gg;
+        
+        if (mm < 10) 
+            mm = "0" + mm;
+        
+        var cur_day = aaaa + "-" + mm + "-" + gg;
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        if (hours < 10) 
+            hours = "0" + hours;
+        
+        if (minutes < 10) 
+            minutes = "0" + minutes;
+        
+        if (seconds < 10) 
+            seconds = "0" + seconds;
+        
+        return cur_day + "　" + hours + " : " + minutes + " : " + seconds;
+    }
+    
+    function isMobile() {
+        var UserAgent = navigator.userAgent;
+        if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung|Galaxy|GALAXY/) != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $(document).ready(function () {
+        $(".bg-dark").click();
+        $(".realBSLastUpdate").html("Last Update : " + convertNow(new Date().getTime()));
+        $(".realWDLastUpdate").html("Last Update : " + convertNow(new Date().getTime()));
+
+        $("#showmm").on("change", function () {
+            localStorage.setItem("showmm", $("#showmm").val());
+        });
+        if (isMobile() == true) {
+            $("#subMenu").hide();
+            $("#mainMenu").css("flex", "0 0 100%");
+        }
+        tata.log("[C4EI 마이닝 사이트]", '<a target="_blank" href="https://c4ei.net">바로가기</a>', {
+            duration: 10000,
+            position: "br"
+        });
+        $("#select2-single").change(function () {
+            var w = $(this).find("option:selected").attr("value");
+            if (w == "B0") {
+                var x = "UPBIT:BTCKRW";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "B1") {
+                var x = "BINANCE:BTCUSDT";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "B2") {
+                var x = "BITFINEX:BTCUSDLONGS";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=60&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "B3") {
+                var x = "BITFINEX:BTCUSDSHORTS";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=60&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "B4") {
+                var x = "BTC.D";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C1") {
+                var x = "FOREXCOM:NSXUSD";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C2") {
+                var x = "SPX500USD";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C3") {
+                var x = "KOSPI";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C4") {
+                var x = "KOSDAQ";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C5") {
+                var x = "005930";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C6") {
+                var x = "035420";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C7") {
+                var x = "035720";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C8") {
+                var x = "000660";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            } else if (w == "C9") {
+                var x = "051910";
+                document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+            }
+        });
+        var animTime = 10;
+        var audioCheck = localStorage.getItem("myaudio");
+        if (! audioCheck) {
+            useAudio = true;
+            localStorage.setItem("myaudio", "check");
+            $("#myaudio").prop("checked", true);
+        } else {
+            if (audioCheck == "check") {
+                useAudio = true;
+                $("#myaudio").prop("checked", true);
+            } else {
+                useAudio = false;
+                $("#myaudio").prop("checked", false);
+            }
+        }
+        $("#myaudio").click(function () {
+            var checked = $("#myaudio").is(":checked");
+            if (checked) {
+                localStorage.setItem("myaudio", "check");
+                useAudio = true;
+            } else {
+                localStorage.setItem("myaudio", "uncheck");
+                useAudio = false;
+            }
+        });
+        var volumeCheck = localStorage.getItem("volume");
+        if (! volumeCheck) {
+            audioVolume = 0.65;
+            localStorage.setItem("volume", "0.65");
+            $("#audiovolume").val("0.65");
+        } else {
+            audioVolume = parseFloat(volumeCheck);
+            $("#audiovolume").val(volumeCheck);
+        }
+        $("#audiovolume").change(function () {
+            var a = $("#audiovolume").val();
+            localStorage.setItem("volume", a);
+            audioVolume = parseFloat(a);
+        });
+        $(".realTradesMain").mCustomScrollbar({autoHideScrollbar: true, theme: "minimal-dark", scrollInertia: 0});
+        $(".realWDCard").mCustomScrollbar({autoHideScrollbar: true, theme: "minimal-dark", scrollInertia: 0});
+        $(".realBSCard").mCustomScrollbar({autoHideScrollbar: true, theme: "minimal-dark", scrollInertia: 0});
+        $(".realSideBar").mCustomScrollbar({autoHideScrollbar: true, theme: "minimal-white", scrollInertia: 0});
+        $(".realTradesMain").on("DOMMouseScroll mousewheel", function (ev) {
+            if (isMobile() === false) {
+                var $this = $(this),
+                    scrollTop = this.scrollTop,
+                    scrollHeight = this.scrollHeight,
+                    height = $this.height(),
+                    delta = ev.originalEvent.wheelDelta,
+                    up = delta > 0;
+
+                var prevent = function () {
+                    ev.stopPropagation();
+                    ev.preventDefault();
+                    ev.returnValue = false;
+                    return false;
+                };
+
+                if (! up && - delta > scrollHeight - height - scrollTop) {
+                    $this.scrollTop(scrollHeight);
+                    return prevent();
+                } else if (up && delta > scrollTop) {
+                    $this.scrollTop(0);
+                    return prevent();
+                }
+            }
+        });
+        // connectWS();
+        if (isMobile() === true) {
+            $("#c1").removeClass("col-3").addClass("col-6");
+            $("#c2").removeClass("col-3").addClass("col-6");
+            $("#c3").removeClass("col-3").addClass("col-6");
+            $("#c4").removeClass("col-3").addClass("col-6");
+            $(".btcFundText").html("비트코인<br>펀딩 비율<br>");
+            $(".ethFundText").html("이더리움<br>펀딩 비율<br>");
+            $(".xrpFundText").html("리플<br>펀딩 비율<br>");
+            $("#g1").removeClass("col-3").addClass("col-12");
+            $("#g2").removeClass("col-3").addClass("col-12");
+            $("#g3").removeClass("col-3").addClass("col-12");
+            $("#g4").removeClass("col-3").addClass("col-12");
+        }
+    });
+</script>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>web.c4ei.net | Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="실시간 고래 입출금(50십만$) 및 체결, 김프 등 조회" />
+	<meta name="author" content="c4ei.net" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="assets/css/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+</head>
+<body>
+	<!-- BEGIN #app -->
+	<input type="hidden" id="krw" value="1257.5" />	
+	<div id="app" class="app app-sidebar-collapsed">
+		<!-- BEGIN #header -->
+		<div id="header" class="app-header">
+			<!-- BEGIN desktop-toggler -->
+			<div class="desktop-toggler" style="display: none;">
+				<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-collapsed" data-dismiss-class="app-sidebar-toggled" data-toggle-target=".app">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+			</div>
+			<!-- BEGIN desktop-toggler -->
+			
+			<!-- BEGIN mobile-toggler -->
+			<div class="mobile-toggler" style="display: none;">
+				<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-mobile-toggled" data-toggle-target=".app">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+			</div>
+			<!-- END mobile-toggler -->
+			
+			<!-- BEGIN brand -->
+			<div class="brand">
+				<a href="/" class="brand-logo">
+					<span class="brand-img">
+						<span class="brand-img-text text-theme">H</span>
+					</span>
+					<span class="brand-text">WEB.C4EI.NET</span>
+				</a>
+			</div>
+			<!-- END brand -->
+			
+			<!-- BEGIN menu -->
+			<div class="menu">
+			</div>
+			<!-- END menu -->
+			<!-- BEGIN menu-search -->
+			<!-- END menu-search -->
+		</div>
+		<!-- END #header -->
+		
+		<!-- BEGIN #sidebar -->
+		<div id="sidebar" class="app-sidebar">
+
+		</div>
+		<!-- END #sidebar -->
+			
+		<!-- BEGIN mobile-sidebar-backdrop -->
+		<button class="app-sidebar-mobile-backdrop" data-toggle-target=".app" data-toggle-class="app-sidebar-mobile-toggled"></button>
+		<!-- END mobile-sidebar-backdrop -->
+		
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content">
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN 공포 / 탐욕 지수 -->
+				<div class="col-xl-3 col-lg-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">공포 / 탐욕 지수</span>
+							</div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7">
+									<h3 class="mb-0" id="dt_f1">중간  = 47.9</h3>
+								</div>
+							</div>
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END 공포 / 탐욕 지수 -->
+				<!-- BEGIN 강도 지수 (RSI) -->
+				<div class="col-xl-3 col-lg-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">강도 지수 (RSI)</span>
+							</div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7">
+									<h3 class="mb-0" id="dt_f2">중간  = 49.3</h3>
+								</div>
+							</div>
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END 공포 / 강도 지수 (RSI) -->
+				<!-- BEGIN 스토캐스틱 (RSI) -->
+				<div class="col-xl-3 col-lg-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">스토캐스틱 (RSI)</span>
+							</div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7">
+									<h3 class="mb-0" id="dt_f3">과매도 [ 2 ]  = 5.7</h3>
+								</div>
+							</div>
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END 스토캐스틱 (RSI) -->
+				<!-- BEGIN 비트코인 이평선 트렌드 -->
+				<div class="col-xl-3 col-lg-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">비트코인 이평선 트렌드</span>
+							</div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7">
+									<h3 class="mb-0" id="dt_f4">상승장</h3>
+								</div>
+							</div>
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END 비트코인 이평선 트렌드 -->
+
+				<!-- BEGIN 비트코인 시장 점유율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">비트코인 시장 점유율</span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f5">50%</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 비트코인 시장 점유율 -->
+				<!-- BEGIN 비트코인 김프 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">비트코인 김프</span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f6">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 비트코인 김프 -->
+				<!-- BEGIN 이더리움 김프 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">이더리움 김프</span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f7">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 이더리움 김프 -->
+				<!-- BEGIN 리플 김프 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">리플 김프</span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f8">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 리플 김프 -->
+
+				<!-- BEGIN 비트코인 롱 비율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">LONG (공매수) 비율 </span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f9">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 비트코인 롱 비율 -->
+				<!-- BEGIN 비트코인 숏 비율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">SHORT (공매도) 비율 </span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f10">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 비트코인 숏 비율 -->
+				<!-- BEGIN 비트코인 펀딩 비율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">비트코인 펀딩 비율 </span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f11">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 비트코인 펀딩 비율 -->
+				<!-- BEGIN 이더리움 펀딩 비율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">이더리움 펀딩 비율 </span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f12">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 이더리움 펀딩 비율 -->
+				<!-- BEGIN 리플  펀딩 비율 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">리플 펀딩 비율 </span></div>
+							<div class="row align-items-center mb-2">
+								<div class="col-7"><h3 class="mb-0" id="dt_f13">5</h3></div>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END 리플  펀딩 비율 -->
+				<!-- BEGIN aoa 포지션 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">aoa 포지션 </span></div>
+							<div class="row align-items-center mb-2">
+								<div id="dt_f14_1" style="font-size: 12px" class="text-info mt-2 type1update">
+									2022-06-08　09 : 00
+								</div>
+								<span id="dt_f14_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END aoa 포지션 -->
+				<!-- BEGIN aoa 포지션 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">3dudes 포지션 </span></div>
+							<div class="row align-items-center mb-2">
+								<div id="dt_f15_1" style="font-size: 12px" class="text-info mt-2 type1update">
+									2022-06-08　09 : 00
+								</div>
+								<span id="dt_f15_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END aoa 포지션 -->
+				<!-- BEGIN aoa 포지션 -->
+				<div class="col-xl-3 col-lg-6">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">BogPear 포지션 </span></div>
+							<div class="row align-items-center mb-2">
+								<div id="dt_f15_1" style="font-size: 12px" class="text-info mt-2 type1update">
+									2022-06-08　09 : 00
+								</div>
+								<span id="dt_f15_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+							</div>
+						</div>
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- END aoa 포지션 -->
+				
+				<!-- BEGIN col-6 -->
+<!-- 실시간 시세잡담 -->
+				<!-- BEGIN 센터 좌 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3" style="min-height: 480px;">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">실시간 시세잡담</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
+							<!-- BEGIN chart -->
+							<div class="ratio ratio-21x9 mb-3">
+								<!-- <div id="chart-server"></div> -->
+								<table width="100%" height="40" border="0">
+									<tr>
+										<td>
+											<style>.chat_box {width: 360px; height: 100%; overflow-y: auto; }
+												.chat_box::-webkit-scrollbar { width: 10px; }
+												.chat_box::-webkit-scrollbar-thumb {background-color: #2f3542;border-radius: 10px;background-clip: padding-box;border: 2px solid transparent;}
+												.chat_box::-webkit-scrollbar-track {background-color: grey;border-radius: 10px;box-shadow: inset 0px 0px 5px white;}</style>
+											<div class="chat_box" style="height: 360px;width: 100%;vertical-align: top;overflow-y: scroll;" >
+												<table class="table table-striped table-borderless mb-2px small text-nowrap">
+													<tbody id="tbl_chatMsg" >
+														<tr>
+															<td>
+																<span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i> 
+																	welcome </span>
+															</td>
+															<td><small>1 min ago</small></td>
+														</tr>
+														<tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+														<tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+													</tbody>
+												</table>
+												</div>											
+										</td>
+									</tr>
+								<form id="form" action="">
+									<tr>
+										<td>
+											<table style="width: 100%;" border="0">
+												<tr>
+													<td><input id="input" autocomplete="off" style="width: 90%;" class="form-control"  /></td>
+													<td>
+														<button class="btn btn-outline-default me-2 mb-1 start">Send</button>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									</form>
+								</table>
+								<script src="/socket.io/socket.io.js"></script>
+								<script>
+								  var socket = io();
+								//   var messages = document.getElementById('messages');
+								  var form = document.getElementById('form');
+								  var input = document.getElementById('input');
+								
+								  form.addEventListener('submit', function(e) {
+									e.preventDefault();
+									if (input.value) {
+									  socket.emit('chat message', input.value);
+									  input.value = '';
+									}
+								  });
+								
+								  socket.on('chat message', function(msg) {
+									// let _tr = '<tr><td>'+msg+'</td></tr>';
+
+									let _tr = '<tr><td><span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i>'+msg+' </span></td><td><small>'+jsfn_convertNow(new Date().getTime())+'</small></td></tr>';
+									$("#tbl_chatMsg").prepend(_tr);
+								  });
+								</script>
+								<!-- ############################################################################### -->
+							</div>
+							<!-- END chart -->
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END 센터 좌 -->
+				<!-- END col-6 -->
+				<!-- BEGIN 센터 우 -->
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3" style="min-height: 480px;">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">
+<!-- BEGIN 바이낸스 차트 SELECT -->
+									<select id="select2-single" class="form-control " >
+										<optgroup label="가상화폐 관련">
+											<option selected="" value="B1">비트코인(BTCUSDT 바이낸스) 차트</option>
+											<option value="B0">비트코인(BTCKRW 업비트) 차트</option>
+											<option value="B2">비트코인(BITFINEX) 롱 물량 차트</option>
+											<option value="B3">비트코인(BITFINEX) 숏 물량 차트</option>
+											<option value="B4">비트코인 도미넌스 (시장점유율) 차트</option>
+											<option value="B5">이더리움(ETHUSDT 바이낸스) 차트</option>
+											<option value="B6">솔라나(SOLUSDT 바이낸스) 차트</option>
+											<option value="B7">리플(XRPUSDT 바이낸스) 차트</option>
+										</optgroup>
+										<optgroup label="주식 관련">
+											<option value="C1">주식 - 나스닥(NXDUSD) 차트</option>
+										</optgroup>
+									</select>
+<!-- END 바이낸스 차트 SELECT -->
+								</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
+<!-- BEGIN 바이낸스 차트 -->
+							<div class="ratio ratio-21x9 mb-3">
+								<div id="world-map" class="jvectormap-without-padding" style="min-height: 400px;">
+									<iframe id="tradingview_627c9" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=BINANCE:BTCUSDT&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=BINANCE:BTCUSDT" style="width: 100%;height: 100%;margin: 0 !important;padding: 0 !important;border-radius: 5px;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+								</div>
+							</div>
+<!-- END 바이낸스 차트 -->
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END col-6 -->
+				<!-- END 센터 우 -->
+
+<!-- 실시간 고래 입출금 -->
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">실시간 고래 입출금</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
+							<!-- BEGIN table -->
+							<div class="table-responsive">
+								<table class="table table-striped table-borderless mb-2px small text-nowrap">
+									<input type="hidden" id="tbl_tele1_max" value="0" /> 
+									<tbody id="tbl_tele1">
+									</tbody>
+								</table>
+							</div>
+							<!-- END table -->
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END col-6 -->
+
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-3">
+								<span class="flex-grow-1">급상승 코인(MEXC제공)</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
+							<!-- BEGIN table -->
+							<div class="table-responsive">
+								<table class="w-100 mb-0 small align-middle text-nowrap">
+									<tbody>
+										<!-- <tr>
+											<td>
+												<div class="d-flex">
+													<div class="position-relative mb-2">
+														<div class="bg-center bg-cover bg-no-repeat w-80px h-60px" style="background-image: url(assets/img/dashboard/product-1.jpeg);">
+														</div>
+														<div class="position-absolute top-0 start-0">
+															<span class="badge bg-theme text-theme-900 rounded-0 d-flex align-items-center justify-content-center w-20px h-20px">1</span>
+														</div>
+													</div>
+													<div class="flex-1 ps-3">
+														<div class="mb-1"><small class="fs-9px fw-500 lh-1 d-inline-block rounded-0 badge bg-white bg-opacity-25 text-white text-opacity-75 pt-5px">SKU90400</small></div>
+														<div class="fw-500 text-white">Huawei Smart Watch</div>
+														$399.00
+													</div>
+												</div>
+											</td>
+											<td>
+												<table class="mb-2">
+													<tr>
+														<td class="pe-3">QTY:</td>
+														<td class="text-white text-opacity-75 fw-500">129</td>
+													</tr>
+													<tr>
+														<td class="pe-3">REVENUE:</td>
+														<td class="text-white text-opacity-75 fw-500">$51,471</td>
+													</tr>
+													<tr>
+														<td class="pe-3 text-nowrap">PROFIT:</td>
+														<td class="text-white text-opacity-75 fw-500">$15,441</td>
+													</tr>
+												</table>
+											</td>
+											<td><a href="#" class="text-decoration-none text-white"><i class="bi bi-search"></i></a></td>
+										</tr> -->
+									</tbody>
+								</table>
+							</div>
+							<!-- END table -->
+						</div>
+						<!-- END card-body -->
+						
+						<!-- BEGIN card-arrow -->
+						<div class="card-arrow">
+							<div class="card-arrow-top-left"></div>
+							<div class="card-arrow-top-right"></div>
+							<div class="card-arrow-bottom-left"></div>
+							<div class="card-arrow-bottom-right"></div>
+						</div>
+						<!-- END card-arrow -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END col-6 -->
+			</div>
+			<!-- END row -->
+		</div>
+		<!-- END #content -->
+		
+		<!-- BEGIN btn-scroll-top -->
+		<a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+		<!-- END btn-scroll-top -->
+		<!-- BEGIN theme-panel -->
+		<!-- END theme-panel -->
+	</div>
+	<!-- END #app -->
+	<div>
+		<a href="https://www.mexc.com/ko-KR/register?inviteCode=mexc-c4ei" target="_blank" title="mexc">
+		<img src="/img/mexc728x90.png" alt="mexc" style="height:90px;width:728px;" id="topBanner"/>
+		</a>
+	</div>
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="assets/js/vendor.min.js"></script>
+	<script src="assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="assets/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="assets/js/demo/dashboard.demo.js"></script>
+	<!-- ================== END page-js ================== -->
+	<script>
+		function getData() {
+			// console.log('====== 1MIN 마다 실행 ======');
+			$.ajax({
+				url: "/api/mainInfo",
+				type: "get",
+				datatype: "json",
+				success: function (data) { 
+					let arrData = JSON.parse(data);
+					$("#dt_f1").text(arrData.f1);
+					$("#dt_f2").text(arrData.f2);
+					$("#dt_f3").text(arrData.f3);
+					$("#dt_f4").text(arrData.f4);
+					$("#dt_f5").text(arrData.f5);
+					$("#dt_f6").text(arrData.f6);
+					$("#dt_f7").text(arrData.f7);
+					$("#dt_f8").text(arrData.f8);
+					$("#dt_f9").text(arrData.f9);
+					$("#dt_f10").text(arrData.f10);
+					$("#dt_f11").text(arrData.f11);
+					$("#dt_f12").text(arrData.f12);
+					$("#dt_f13").text(arrData.f13);
+					$("#dt_f14_1").text(arrData.f14_1);
+					$("#dt_f14_2").text(arrData.f14_2);
+					$("#dt_f15_1").text(arrData.f15_1);
+					$("#dt_f15_2").text(arrData.f15_2);
+					$("#dt_f16_1").text(arrData.f16_1);
+					$("#dt_f16_2").text(arrData.f16_2);
+					if(arrData.f14_2=="Long"){
+						$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					}else{
+						$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					}
+					if(arrData.f15_2=="Long"){
+						$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					}else{
+						$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					}
+					if(arrData.f16_2=="Long"){
+						$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					}else{
+						$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					}
+				},
+				error: function () { // alert('error');
+				}
+			});
+		}
+	
+		function getData2() {
+			let _tbl_tele1_max = $("#tbl_tele1_max").val();
+			$.ajax({
+				url: "/api/whaleTrInfo",
+				type: "get",
+				datatype: "json",
+				success: function (data) 
+				{
+					let str = JSON.parse(data);
+					if(str.id!=undefined){
+						if(str.from_owner_type=='unknown'){str.from_owner_type="특정지갑";}
+						if(str.to_owner_type=='unknown'){str.to_owner_type="특정지갑";}
+						let _tr = '';
+						_tr = _tr+'<tr><td><span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-theme me-2"></i>';
+						_tr = _tr+''+str.from_owner_type+' ▷ '+str.to_owner_type+' '+(str.amount_usd).toLocaleString('ko-KR')+' USDT '+jsfn_numb2Krw(str.amount_usd)+' KRW';
+						_tr = _tr+'</span></td><td><small>'+str.regdate+'</small></td></tr>';
+						// _tr = _tr+'<tr><td style="display:none;">'+str.id+'</td>';
+						// _tr = _tr+'<td style="display:none;">'+str.blockchain+'</td>';
+						if(_tbl_tele1_max!=str.id){
+							$("#tbl_tele1").prepend(_tr);
+							$("#tbl_tele1_max").val(str.id);
+						}
+					}
+				},
+				error: function () { // alert('error');
+				}
+			});
+		}
+	
+		function jsfn_numb2Krw(number) {
+			let _krw = $("#krw").val();
+			var inputNumber = number < 0 ? false : number;
+			inputNumber = inputNumber*_krw;  // krw
+			var unitWords = ["", "만", "억", "조", "경"];
+			var splitUnit = 10000;
+			var splitCount = unitWords.length;
+			var resultArray = [];
+			var resultString = "";
+	
+			for (var i = 0; i < splitCount; i++) {
+				var unitResult =
+				(inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+				unitResult = Math.floor(unitResult);
+				if (unitResult > 0) {
+				resultArray[i] = unitResult;
+				}
+			}
+			for (var i = 0; i < resultArray.length; i++) {
+				if (!resultArray[i]) continue;
+				resultString = String(resultArray[i]) + unitWords[i] + resultString;
+			}
+			return resultString;
+		}
+
+		function jsfn_convertNow(x) {
+			var date = new Date(x);
+			var aaaa = date.getFullYear();
+			var gg = date.getDate();
+			var mm = date.getMonth() + 1;
+			if (gg < 10) 
+				gg = "0" + gg;
+			
+			if (mm < 10) 
+				mm = "0" + mm;
+			
+			var cur_day = aaaa + "-" + mm + "-" + gg;
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var seconds = date.getSeconds();
+			if (hours < 10) 
+				hours = "0" + hours;
+			
+			if (minutes < 10) 
+				minutes = "0" + minutes;
+			
+			if (seconds < 10) 
+				seconds = "0" + seconds;
+    		return cur_day + "　" + hours + " : " + minutes + " : " + seconds;
+    	}
+	</script>
+	<script>
+		$(document).ready(function () {
+		    $("#select2-single").change(function () 
+				{
+				var w = $(this).find("option:selected").attr("value");
+				if (w == "B0") {
+					var x = "UPBIT:BTCKRW";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "B1") {
+					var x = "BINANCE:BTCUSDT";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "B2") {
+					var x = "BITFINEX:BTCUSDLONGS";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=60&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "B3") {
+					var x = "BITFINEX:BTCUSDSHORTS";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=60&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "B4") {
+					var x = "BTC.D";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=15&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C1") {
+					var x = "FOREXCOM:NSXUSD";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C2") {
+					var x = "SPX500USD";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C3") {
+					var x = "KOSPI";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C4") {
+					var x = "KOSDAQ";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C5") {
+					var x = "005930";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C6") {
+					var x = "035420";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C7") {
+					var x = "035720";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C8") {
+					var x = "000660";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				} else if (w == "C9") {
+					var x = "051910";
+					document.getElementById("tradingview_627c9").src = "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_627c9&symbol=" + x + "&interval=240&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=RSI%40tv-basicstudies%1FMASimple%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FSeoul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=web.c4ei.net&utm_medium=widget&utm_campaign=chart&utm_term=" + x;
+				}
+        	});
+			
+			getData();
+			getData2();
+			const interval = setInterval(() => { getData(); }, 1000 * 60); //console.log('====== 1MIN 마다 실행 ======');
+			const interval2 = setInterval(() => { getData2(); }, 1000 * 15); //console.log('====== 15 sec 마다 실행 ======');
+		});
+	</script>
+</body>
+</html>
