@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>web.c4ei.net | Dashboard</title>
+	<title>web.c4ei.net | 실시간 고래 입출금(50십만$) 및 체결, 김프 등 조회</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="실시간 고래 입출금(50십만$) 및 체결, 김프 등 조회" />
 	<meta name="author" content="c4ei.net" />
-	
+	<meta property="og:title" content="web.c4ei.net | 실시간 고래 입출금(50십만$) 및 체결, 김프 등 조회">
+	<meta property="og:type" content="website">
+    <meta property="og:image" content="https://web.c4ei.net/img/web.png">
+	<meta property="og:url" content="https://web.c4ei.net">
+	<meta property="og:description" content="web.c4ei.net : 실시간 고래 입출금(50십만$), 체결, 김프, 조회, 웹C4EI, 매수 매도 시그널, 바이셀 시그널, 비트코인 정보 사이트, 펀딩비율, 김치프리미엄, 김프, 역프, 코인시세조회, 가상화폐시세, 비트코인 시세, 암호화폐 시세, 비트 차액 비교, 비트코인 재정거래, 재정거래, c4ei.net">
+
 	<!-- ================== BEGIN core-css ================== -->
 	<link href="assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="assets/css/app.min.css" rel="stylesheet" />
@@ -371,6 +376,7 @@
 									2022-06-08　09 : 00
 								</div>
 								<span id="dt_f14_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+								<!-- <span id="dt_f14_3"></span> -->
 							</div>
 						</div>
 						<div class="card-arrow">
@@ -392,6 +398,7 @@
 									2022-06-08　09 : 00
 								</div>
 								<span id="dt_f15_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+								<!-- <span id="dt_f15_3"></span> -->
 							</div>
 						</div>
 						<div class="card-arrow">
@@ -409,10 +416,11 @@
 						<div class="card-body">
 							<div class="d-flex fw-bold small mb-3"><span class="flex-grow-1">BogPear 포지션 </span></div>
 							<div class="row align-items-center mb-2">
-								<div id="dt_f15_1" style="font-size: 12px" class="text-info mt-2 type1update">
+								<div id="dt_f16_1" style="font-size: 12px" class="text-info mt-2 type1update">
 									2022-06-08　09 : 00
 								</div>
-								<span id="dt_f15_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+								<span id="dt_f16_2" style="color: rgb(244, 67, 54)" class="type1po">Short</span>
+								<!-- <span id="dt_f16_3"></span> -->
 							</div>
 						</div>
 						<div class="card-arrow">
@@ -591,11 +599,17 @@
 							<!-- END title -->
 							<!-- BEGIN table -->
 							<div class="table-responsive">
+								<style>.whale_box {width: 360px; height: 100%; overflow-y: auto; }
+									.whale_box::-webkit-scrollbar { width: 10px; }
+									.whale_box::-webkit-scrollbar-thumb {background-color: #2f3542;border-radius: 10px;background-clip: padding-box;border: 2px solid transparent;}
+									.whale_box::-webkit-scrollbar-track {background-color: grey;border-radius: 10px;box-shadow: inset 0px 0px 5px white;}</style>
+								<div class="whale_box" style="height: 360px;width: 100%;vertical-align: top;overflow-y: scroll;" >								
 								<table class="table table-striped table-borderless mb-2px small text-nowrap">
 									<input type="hidden" id="tbl_tele1_max" value="0" /> 
 									<tbody id="tbl_tele1">
 									</tbody>
 								</table>
+								</div>
 							</div>
 							<!-- END table -->
 						</div>
@@ -625,11 +639,11 @@
 							<div class="table-responsive">
 								<script>
 									socket.on('msg_btc_price', function(msg) {
-										let _btc = (msg).toLocaleString('en-US');
+										let _btc = (msg).toLocaleString('en-US')+"$";
 										$("#dt_btc").text(_btc);
 									});
 									socket.on('msg_eth_price', function(msg) {
-										let _eth = (msg).toLocaleString('en-US');
+										let _eth = (msg).toLocaleString('en-US')+"$";
 										$("#dt_eth").text(_eth);
 									});
 								</script>
@@ -669,9 +683,9 @@
 		<!-- END theme-panel -->
 	</div>
 	<!-- END #app -->
-	<div>
+	<div style="padding-left: 5px;padding-bottom: 5px;">
 		<a href="https://www.mexc.com/ko-KR/register?inviteCode=mexc-c4ei" target="_blank" title="mexc">
-		<img src="/img/banner_mexc_100.png" alt="mexc" style="height:100px;width:200px;" id="topBanner"/>
+		<img src="/img/mexc_4x1_2.gif" alt="mexc" style="height:100px;width:400px;" id="topBanner"/>
 		</a>
 	</div>
 	<!-- ================== BEGIN core-js ================== -->
@@ -713,21 +727,21 @@
 					$("#dt_f15_2").text(arrData.f15_2);
 					$("#dt_f16_1").text(arrData.f16_1);
 					$("#dt_f16_2").text(arrData.f16_2);
-					if(arrData.f14_2=="Long"){
-						$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
-					}else{
-						$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
-					}
-					if(arrData.f15_2=="Long"){
-						$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
-					}else{
-						$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
-					}
-					if(arrData.f16_2=="Long"){
-						$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
-					}else{
-						$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
-					}
+					// if(arrData.f14_2=="Long"){
+					// 	$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					// }else{
+					// 	$("#dt_f14_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					// }
+					// if(arrData.f15_2=="Long"){
+					// 	$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					// }else{
+					// 	$("#dt_f15_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					// }
+					// if(arrData.f16_2=="Long"){
+					// 	$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-primary">▲</div>');
+					// }else{
+					// 	$("#dt_f16_3").html('<div style="width: 42px !important;height: 42px !important;" class="avatar w-56 m-2 no-shadow type1g1 gd-red">▼</div>');
+					// }
 				},
 				error: function () { // alert('error');
 				}

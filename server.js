@@ -20,23 +20,38 @@ let sync_connection = new sync_mysql(db_config.constr());
 let krw_price = "0";
 let btc_price = "0";
 let eth_price = "0";
-function getPrice(){
+async function getPrice(){
   let result_KRW = sync_connection.query("SELECT krw,BTC,BTC_KRW,ETH,ETH_KRW FROM show_krw where idx=1");
   krw_price = result_KRW[0].krw;
   btc_price = result_KRW[0].BTC;
   eth_price = result_KRW[0].ETH;
 }
 getPrice();
+let _conCnt=0;
 /////////////////////////////////////////
 io.on('connection', (socket,req,res) => {
-  console.log("connection");
+  _conCnt=_conCnt+1;
+  console.log("connection : "+ _conCnt);
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
   });
-  const interval2 = setInterval(() => { getPrice(); }, 1000 * 15);
-  io.emit('msg_btc_price', btc_price);
-  io.emit('msg_eth_price', eth_price);
+
+  //* 클라이언트로 메세지 보내기
+  socket.interval = setInterval(() => {
+    getPrice();
+    // 15초마다 클라이언트로 메시지 전송
+    io.emit('msg_btc_price', btc_price);
+    io.emit('msg_eth_price', eth_price);
+    // console.log(btc_price + ": "+getCurTimestamp());
+    }, 15000);
+
+  socket.on('disconnect', function() {
+    // console.log("SOCKETIO disconnect EVENT: ", socket.id, " client disconnect");
+    _conCnt=_conCnt-1;
+  });
 });
+
+
 var routes = require('./routes/index');  //
 
 app.use(express.static("public"));
