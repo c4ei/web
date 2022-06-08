@@ -145,5 +145,11 @@ router.get('/api/whaleTrInfo', function(req, res, next) {
   const data = JSON.stringify(whaleTrInfo);
   res.json(data);
 });
+router.get('/api/krw', function(req, res, next) {
+  let result_KRW = sync_connection.query("SELECT krw as krw FROM show_krw where idx=1 ");
+  let _krw = result_KRW[0].krw;
+  const data = JSON.stringify(_krw);
+  res.json(data);
+});
 
 module.exports = router;

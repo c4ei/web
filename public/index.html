@@ -455,9 +455,9 @@
 														<tr>
 															<td>
 																<span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i> 
-																	welcome </span>
+																	you joined </span>
 															</td>
-															<td><small>1 min ago</small></td>
+															<td><small>  </small></td>
 														</tr>
 														<tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 														<tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
@@ -484,10 +484,8 @@
 								<script src="/socket.io/socket.io.js"></script>
 								<script>
 								  var socket = io();
-								//   var messages = document.getElementById('messages');
 								  var form = document.getElementById('form');
 								  var input = document.getElementById('input');
-								
 								  form.addEventListener('submit', function(e) {
 									e.preventDefault();
 									if (input.value) {
@@ -495,11 +493,9 @@
 									  input.value = '';
 									}
 								  });
-								
 								  socket.on('chat message', function(msg) {
-									// let _tr = '<tr><td>'+msg+'</td></tr>';
-
-									let _tr = '<tr><td><span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i>'+msg+' </span></td><td><small>'+jsfn_convertNow(new Date().getTime())+'</small></td></tr>';
+									// let _tr = '<tr><td><span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i>'+msg+' </span></td><td><small>'+jsfn_convertNow(new Date().getTime())+'</small></td></tr>';
+									let _tr = '<tr><td><span class="d-flex align-items-center"><i class="bi bi-circle-fill fs-6px text-white-transparent-3 me-2"></i>'+msg+' </span></td><td><small></small></td></tr>';
 									$("#tbl_chatMsg").prepend(_tr);
 								  });
 								</script>
@@ -534,7 +530,7 @@
 							<div class="d-flex fw-bold small mb-3">
 								<span class="flex-grow-1">
 <!-- BEGIN 바이낸스 차트 SELECT -->
-									<select id="select2-single" class="form-control " >
+									<select id="select2-single" class="form-control " style="background-color: gray;">
 										<optgroup label="가상화폐 관련">
 											<option selected="" value="B1">비트코인(BTCUSDT 바이낸스) 차트</option>
 											<option value="B0">비트코인(BTCKRW 업비트) 차트</option>
@@ -587,7 +583,9 @@
 						<div class="card-body">
 							<!-- BEGIN title -->
 							<div class="d-flex fw-bold small mb-3">
-								<span class="flex-grow-1">실시간 고래 입출금</span>
+								<span class="flex-grow-1">실시간 고래 입출금 
+									<a style="border-radius: 50%" href="https://t.me/whale_dream" target="_blank"><img src="/img/telegram.png" style="width: 20px;"/></a>
+								</span>
 								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
 							</div>
 							<!-- END title -->
@@ -618,72 +616,45 @@
 
 				<!-- BEGIN col-6 -->
 				<div class="col-xl-6">
-					<!-- BEGIN card -->
 					<div class="card mb-3">
-						<!-- BEGIN card-body -->
 						<div class="card-body">
-							<!-- BEGIN title -->
 							<div class="d-flex fw-bold small mb-3">
-								<span class="flex-grow-1">급상승 코인(MEXC제공)</span>
+								<span class="flex-grow-1">메이저 코인 가격 및 급상승 코인(MEXC제공)</span>
 								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
 							</div>
-							<!-- END title -->
-							<!-- BEGIN table -->
 							<div class="table-responsive">
+								<script>
+									socket.on('msg_btc_price', function(msg) {
+										let _btc = (msg).toLocaleString('en-US');
+										$("#dt_btc").text(_btc);
+									});
+									socket.on('msg_eth_price', function(msg) {
+										let _eth = (msg).toLocaleString('en-US');
+										$("#dt_eth").text(_eth);
+									});
+								</script>
 								<table class="w-100 mb-0 small align-middle text-nowrap">
 									<tbody>
-										<!-- <tr>
-											<td>
-												<div class="d-flex">
-													<div class="position-relative mb-2">
-														<div class="bg-center bg-cover bg-no-repeat w-80px h-60px" style="background-image: url(assets/img/dashboard/product-1.jpeg);">
-														</div>
-														<div class="position-absolute top-0 start-0">
-															<span class="badge bg-theme text-theme-900 rounded-0 d-flex align-items-center justify-content-center w-20px h-20px">1</span>
-														</div>
-													</div>
-													<div class="flex-1 ps-3">
-														<div class="mb-1"><small class="fs-9px fw-500 lh-1 d-inline-block rounded-0 badge bg-white bg-opacity-25 text-white text-opacity-75 pt-5px">SKU90400</small></div>
-														<div class="fw-500 text-white">Huawei Smart Watch</div>
-														$399.00
-													</div>
-												</div>
-											</td>
-											<td>
-												<table class="mb-2">
-													<tr>
-														<td class="pe-3">QTY:</td>
-														<td class="text-white text-opacity-75 fw-500">129</td>
-													</tr>
-													<tr>
-														<td class="pe-3">REVENUE:</td>
-														<td class="text-white text-opacity-75 fw-500">$51,471</td>
-													</tr>
-													<tr>
-														<td class="pe-3 text-nowrap">PROFIT:</td>
-														<td class="text-white text-opacity-75 fw-500">$15,441</td>
-													</tr>
-												</table>
-											</td>
-											<td><a href="#" class="text-decoration-none text-white"><i class="bi bi-search"></i></a></td>
-										</tr> -->
+										<tr>
+											<td>BTC 가격</td><td><h3 class="mb-0" id="dt_btc"></h3></td>
+											<td>ETH 가격</td><td><h3 class="mb-0" id="dt_eth"></h3></td>
+										</tr>
+									</tbody>
+								</table>								
+								<table class="w-100 mb-0 small align-middle text-nowrap">
+									<tbody>
+
 									</tbody>
 								</table>
 							</div>
-							<!-- END table -->
 						</div>
-						<!-- END card-body -->
-						
-						<!-- BEGIN card-arrow -->
 						<div class="card-arrow">
 							<div class="card-arrow-top-left"></div>
 							<div class="card-arrow-top-right"></div>
 							<div class="card-arrow-bottom-left"></div>
 							<div class="card-arrow-bottom-right"></div>
 						</div>
-						<!-- END card-arrow -->
 					</div>
-					<!-- END card -->
 				</div>
 				<!-- END col-6 -->
 			</div>
@@ -700,7 +671,7 @@
 	<!-- END #app -->
 	<div>
 		<a href="https://www.mexc.com/ko-KR/register?inviteCode=mexc-c4ei" target="_blank" title="mexc">
-		<img src="/img/mexc728x90.png" alt="mexc" style="height:90px;width:728px;" id="topBanner"/>
+		<img src="/img/banner_mexc_100.png" alt="mexc" style="height:100px;width:200px;" id="topBanner"/>
 		</a>
 	</div>
 	<!-- ================== BEGIN core-js ================== -->
@@ -727,7 +698,7 @@
 					$("#dt_f2").text(arrData.f2);
 					$("#dt_f3").text(arrData.f3);
 					$("#dt_f4").text(arrData.f4);
-					$("#dt_f5").text(arrData.f5);
+					$("#dt_f5").text(arrData.f5+"%");
 					$("#dt_f6").text(arrData.f6);
 					$("#dt_f7").text(arrData.f7);
 					$("#dt_f8").text(arrData.f8);
@@ -791,7 +762,24 @@
 				}
 			});
 		}
-	
+
+		function getData0() {
+			$.ajax({
+				url: "/api/krw",
+				type: "get",
+				datatype: "json",
+				success: function (data) 
+				{
+					let str = JSON.parse(data);
+					if(str.krw!=undefined){
+						$("#krw").val(str.krw);
+					}
+				},
+				error: function () { // alert('error');
+				}
+			});
+		}
+		
 		function jsfn_numb2Krw(number) {
 			let _krw = $("#krw").val();
 			var inputNumber = number < 0 ? false : number;
@@ -845,6 +833,8 @@
 	</script>
 	<script>
 		$(document).ready(function () {
+			getData0(); // krw
+
 		    $("#select2-single").change(function () 
 				{
 				var w = $(this).find("option:selected").attr("value");
