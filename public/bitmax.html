@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>web.c4ei.net 500000% Bitmex - v1.1</title>
+	<title>web.c4ei.net 100,000$ Bitmex - v1.1</title>
 	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -135,7 +135,7 @@
 				const { data } = this.props;
 				const row = data.map((data, i) =>
 					<tr className={"streamingListRow " + (data.size > 99999 ? 'Dark ' : '') + (data.side == "Sell" ? 'Sell' : 'Buy')} key={i}>
-						<td width="90">{data.price}</td>
+						<td width="90">bitmax : {data.price}$</td>
 						<td width="80">{data.size > 999 ? (data.size / 1000).toFixed(0) + 'k' : data.size}</td>
 						<td width="100">{data.timestamp}</td>
 					</tr>
@@ -152,9 +152,7 @@
 			}
 			render() {
 				return (
-					<table className="streamingTable">
-						<TableRow data={this.props.data} />
-					</table>
+					<table className="streamingTable"><TableRow data={this.props.data} /></table>
 				);
 			}
 		}
@@ -216,41 +214,33 @@
 				this.onSymbol = this.onSymbol.bind(this);
 				this.onKeyPress = this.onKeyPress.bind(this);
 			}
-
-			onKeyPress(e) {
-				if (e.key === 'Enter') {
-					this.onSymbol();
-				}
-			}
-
-			onSymbol() {
-				this.dataComponent.initWebSocketClient(this.refs.symbol.value, parseInt(this.refs.minPrice.value));
-			}
+			onKeyPress(e) { if (e.key === 'Enter') { this.onSymbol(); } }
+			onSymbol() { this.dataComponent.initWebSocketClient(this.refs.symbol.value, parseInt(this.refs.minPrice.value)); }
 
 			render() {
 				return (
 					<div >
 						<div style={{display: "none"}}>
-						<input id="show_Coin_symbol"
-							ref="symbol"
-							type="text"
-							name="symbolBox"
-							defaultValue="XBTUSD"
-							className="symbolInput"
-							placeholder="Enter symbol here..."
-							onKeyPress={this.onKeyPress}
-						/>
-						<input id="show_Coin_price"
-							ref="minPrice"
-							type="number"
-							name="minPriceBox"
-							defaultValue="500000"
-							className="priceInput"
-							placeholder="Min order size threshold..."
-							min="0"
-							onKeyPress={this.onKeyPress}
-						/>
-						<button id="btnShowTrade" onClick={this.onSymbol}>Submit</button>
+							<input id="show_Coin_symbol"
+								ref="symbol"
+								type="text"
+								name="symbolBox"
+								defaultValue="XBTUSD"
+								className="symbolInput"
+								placeholder="Enter symbol here..."
+								onKeyPress={this.onKeyPress}
+							/>
+							<input id="show_Coin_price"
+								ref="minPrice"
+								type="number"
+								name="minPriceBox"
+								defaultValue="100000"
+								className="priceInput"
+								placeholder="Min order size threshold..."
+								min="0"
+								onKeyPress={this.onKeyPress}
+							/>
+							<button id="btnShowTrade" onClick={this.onSymbol}>Submit</button>
 						</div>
 						<div>
 							<ShowData ref={instance => { this.dataComponent = instance; }} />
