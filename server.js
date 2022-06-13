@@ -32,6 +32,7 @@ let _conCnt=0;
 io.on('connection', (socket,req,res) => {
   _conCnt=_conCnt+1;
   console.log("connection : "+ _conCnt + " : " + getCurTimestamp());
+  io.emit('chat message', "현재 접속 수 ("+ _conCnt+ ") " + getCurTimestamp());
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
   });
