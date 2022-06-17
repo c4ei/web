@@ -135,7 +135,7 @@
 				const { data } = this.props;
 				const row = data.map((data, i) =>
 					<tr className={"streamingListRow " + (data.size > 99999 ? 'Dark ' : '') + (data.side == "Sell" ? 'Sell' : 'Buy')} key={i}>
-						<td width="90">bitmax : {data.price}$</td>
+						<td width="90">bitmex : {data.price}$</td>
 						<td width="80">{data.size > 999 ? (data.size / 1000).toFixed(0) + 'k' : data.size}</td>
 						<td width="100">{data.timestamp}</td>
 					</tr>
